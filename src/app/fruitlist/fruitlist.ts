@@ -1,12 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-fruitlist',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './fruitlist.html',
   styleUrl: './fruitlist.scss'
 })
 export class Fruitlist {
+
   fruitlist = [
     {
       name: "Apfel",
@@ -56,5 +58,6 @@ export class Fruitlist {
       stars: 4.7,
       reviews: [{ name: "Kevin W.", text: "Ganz gut in der Regel!" }, { name: "Oliver J.", text: "Absoluter Favorit beim Frühstück" }],
     },
+    
   ]
 }
