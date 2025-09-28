@@ -48,7 +48,11 @@
                     }
                     }
                     <!-- this was to learn about switch statements in angular -->
-                    <p>({{item.stars}})</p>
+
+                    <!-- <p [ngStyle]="{'color': item.stars > 3 ? 'lightgreen' : 'lightcoral'}" >({{item.stars}})</p> 
+                     this was to learn about ngStyle in angular-->
+
+                    <p  [ngClass]="{'fontColorBad': item.stars < 3, 'fontColorGood': item.stars > 3}">({{item.stars}})</p>
                 </div>
             </div>
             <div><b>Art:</b><br>{{item.genus}}</div>
