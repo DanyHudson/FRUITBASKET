@@ -1,74 +1,7 @@
-<!-- @for (item of fruitlist; track item.name; let index = $index; let last = $last; let first = $first) {
-    <p>{{ index + 1 }}. {{ item.name }} {{last}} {{first}}</p>
-} -->
-
-<!-- @for (item of fruitlist; track item.name; let index = $index;) {
-    <p>{{ index + 1 }}. {{ item.name }}</p>
-} -->
 <div class="fruitlist_content">
-    @for(item of fruitlist; track item.name; let index = $index;){
-    <section class="singleFruitBox">
-        <div>
-            <img src="./assets/img/fruits/{{item.img}}" alt="" srcset="">
-            <!-- @if(item.stars < 3) { <img src="./assets/img/fruits/{{item.img}}" alt="" srcset="">
-                } @else {
-                <div>no fruit</div>
-                this was to learn about if else statements in angular
-                } -->
+    @for(singlefruit of fruitlist; track singlefruit.name; let index = $index;){
 
-        </div>
-        <div>
-            <h2><app-singlefruit [testNumber]="index + 1"></app-singlefruit> {{item.name}}</h2>
-            <div>
-                <p><b>Bewertung:</b></p>
-                <div>
-                    <!-- @for(count of [1, 2, 3, 4, 5]; track fruitlist){
-                    @if(item.stars > count) {
-                    <img src="./assets/img/stars/star.svg" alt="" srcset="">
-                    } @else if(item.stars > count - 0.5) {
-                    <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
-                    } @else {
-                    <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
-                    }
-                    } 
-                    this was to learn about if else statements witin a for loop in angular
-                    -->
+    <app-singlefruit (fruitName)="nameLog($event)" [fruit]="singlefruit"></app-singlefruit>
 
-                    @for (count of [1, 2, 3, 4, 5]; track count) {
-                    @switch (true) {
-                    @case (item.stars >= count) {
-                    <img src="./assets/img/stars/star.svg" alt="" />
-                    }
-                    @case (item.stars >= count - 0.5) {
-                    <img src="./assets/img/stars/star-half.svg" alt="" />
-                    }
-                    @default {
-                    <img src="./assets/img/stars/star-empty.svg" alt="" />
-                    }
-                    }
-                    }
-                    <!-- this was to learn about switch statements in angular -->
-
-                    <!-- <p [ngStyle]="{'color': item.stars > 3 ? 'lightgreen' : 'lightcoral'}" >({{item.stars}})</p> 
-                     this was to learn about ngStyle in angular-->
-
-                    <p  [ngClass]="{'fontColorBad': item.stars < 3, 'fontColorGood': item.stars > 3}">({{item.stars}})</p>
-                </div>
-            </div>
-            <div><b>Art:</b><br>{{item.genus}}</div>
-            <div><b>Beschreibung:</b><br>{{item.description}}</div>
-            <div>
-                <div>
-                    @for(review of item.reviews; track review){
-                    <div><b>{{review.name}}:</b><br>{{review.text}}</div>
-                    } @empty {
-                    <div>no review available</div> }
-
-                </div>
-                <div><input type="text"><button><img src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
-                </div>
-            </div>
-        </div>
-    </section>
     }
 </div>
