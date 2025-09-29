@@ -65,7 +65,13 @@ export class Fruitlist {
 
   ]
 
-  nameLog(name: string) {
-    console.log(name);
-  }
+  addComponent(comment: string, index: number) {
+    this.fruitlist[index].reviews.push({
+      name: "DanyH",
+      text: comment,
+    })
+
+  };
+
+
 }
