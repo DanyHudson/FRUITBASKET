@@ -16,13 +16,9 @@ export class Fruitlist {
   fontColorGood = 'lightgreen';
   fontColorBad = 'lightcoral';
 
-  
 
-  addComponent(comment: string, index: number) {
-    // this.fruitlist[index].reviews.push({
-    //   name: "DanyH",
-    //   text: comment,
-    // })
+  addComment(comment: string, index: number) {
+    this.fruitlistdataservice.addCommentToFruit(comment, index);
 
   };
 

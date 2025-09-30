@@ -57,4 +57,12 @@ export class Fruitlistdataservice {
     },
 
   ]
+
+  addCommentToFruit(comment: string, index: number) {
+    this.fruitlist[index].reviews.push({
+      name: "DanyH",
+      text: comment,
+    })
+
+  };
 }
